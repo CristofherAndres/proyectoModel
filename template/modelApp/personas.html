@@ -13,7 +13,28 @@
         </div>
 
         {% if personas %}
-            <h1>Hay personas en la DB</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for persona in personas %}
+                <tr>
+                    <td>{{ persona.id }}</td>
+                    <td>{{ persona.nombre }}</td>
+                    <td>{{ persona.correo }}</td>
+                    <td>{{ persona.telefono }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
         {% else %}
             <h1>No hay personas en la DB</h1>
         {% endif %}
